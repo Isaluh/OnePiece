@@ -28,15 +28,12 @@ function novo() {
     troca.forEach(verif => {
         if (verif.classList.contains("selecionado")) {
             aux = cont;
-            console.log(cont, aux);
         };
         cont++;
     });
     cont = 0;
     persoSelect.forEach(perso => {
-        console.log(cont, aux)
         if (cont == aux) {
-            console.log(perso)
             perso.classList.add("selecionado");
         };
         cont++;
