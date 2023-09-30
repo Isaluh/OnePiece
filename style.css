@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000000;
+    color: #ffffff;
+    overflow: hidden;
+}
+ul li{
+    list-style: none;
+}
+
+main::after{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vw;
+
+    background: linear-gradient(-233deg, #000000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+}
+main .personagem{
+    display: none;
+    height: 100vh;
+}
+main .personagem.selecionado{
+    display: block;
+}
+main .personagem .imagem{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.conteudo{
+    position: absolute;
+    top: 0;
+    left: 120px;
+    z-index: 1;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100vh;
+    max-width: 380px;
+}
+.conteudo .logo{
+    background-image: url("./img/one-piece-logo.png");
+    background-size: cover;
+    height: 100px;
+    width: 230px;
+    margin-bottom: 35px;
+}
+.conteudo .nome-personagem{
+    font-size: 48px;
+    font-family: 'Secular One', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+.conteudo .descricao{
+    font-family: 'Rubik', sans-serif;
+    line-height: 24px;
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center;
+    align-items: center;
+
+    gap: 10px;
+
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.botoes .botao{
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.botoes .botao img{
+    border-radius: 50%;
+}
+.botoes .botao.selecionado{
+    transform: scale(1.2);
+    transition: 0.2s;
+    box-shadow: 0 0 10px #d9d9d9;
+}
+
+/* RESPONSIVO */
+@media (max-width: 769px) {
+    main::after{
+        background: linear-gradient(0deg, #000000 40%, rgba(0, 0, 0, 0) 65%) no-repeat;
+        width: 100vw;
+    }
+    main .personagem .imagem{
+        height: 85%;
+    }
+
+    .conteudo{
+        justify-content: flex-end;
+        left: 0;
+        top: -20%;
+        max-width: 100vw;
+        padding: 30px;
+    }
+    .conteudo .nome-personagem{
+        font-size: 36px;
+    }
+    .conteudo .descricao{
+        max-width: 500px;
+    }
+
+    .botoes{
+        flex-direction: row;
+        align-items: flex-end;
+        width: 100%;
+        padding: 30px;
+    }
+    .botoes .botao img{
+        max-width: 60px;
+    }
+}
+
+@media (max-width: 425px) {
+    main .personagem .imagem{
+        height: auto;
+    }
+
+    .conteudo .logo{
+        width: 170px;
+        height: 75px;
+    }
+    .conteudo{
+        top: -30%;
+    }
+    .conteudo .nome-personagem{
+        font-size: 24px;
+    }
+
+    .botoes{
+        padding: 20px;
+        top: -20%;
+    }
+    .botoes .botao img{
+        max-width: 50px;
+    }
+}
